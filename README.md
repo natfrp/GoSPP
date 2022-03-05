@@ -1,5 +1,7 @@
 # GoSPP
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/natfrp/gospp.svg)](https://pkg.go.dev/github.com/natfrp/gospp)
+
 An implementation in Go of
 Cloudflare's [Simple Proxy Protocol](https://developers.cloudflare.com/spectrum/reference/simple-proxy-protocol-header/)
 .
