@@ -61,6 +61,19 @@ func ExampleHeaderWriter() {
 	fmt.Println(buf.Bytes())
 }
 
+func ExampleHeaderWriter_asSlice() {
+	w := HeaderWriter{}
+
+	w.SetClientAddr(net.ParseIP("114.5.1.4"))
+	w.SetClientPort(12345)
+	w.SetProxyAddr(net.ParseIP("2001:db8:1919:810::2b"))
+	w.SetProxyPort(54321)
+
+	buf := &bytes.Buffer{}
+	buf.Write(w[:])
+	fmt.Println(buf.Bytes())
+}
+
 func ExampleHeaderWriter_withPool() {
 	sppPool := sync.Pool{New: func() interface{} {
 		return &HeaderWriter{}
